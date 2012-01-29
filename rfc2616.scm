@@ -60,6 +60,6 @@
    ))
 
 (define (http-status-line status-code)
-  (let ((status (assq status-code *STATUS-TABLE*)))
-    (format "HTTP/1.1 ~A ~A" (car status) (cdr status))))
+  (let ([status (assq status-code *STATUS-TABLE*)])
+    (format "HTTP/1.1 ~A ~A\r\n" (car status) (cdr status))))
 
